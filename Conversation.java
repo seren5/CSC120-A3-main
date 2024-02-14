@@ -8,8 +8,8 @@ class Conversation {
     // You will start the conversation here.
     List<String> transcript = new ArrayList<>();
     
-    int transcriptNum = 0;
-    transcript.add("\nTranscript\n==========");
+    int transcriptNum = 0; // Starts recording number of lines in transcript
+    transcript.add("\nTranscript\n=========="); // Starts transcript
     
     Scanner sc = new Scanner(System.in);
     System.out.println("How many rounds? (in numbers)"); // Take input of how many rounds
@@ -23,9 +23,9 @@ class Conversation {
     
     
 
-    for (int i=0; i < userRoundInput; i++){
+    for (int i=0; i < userRoundInput; i++){ // Loop
       userInput = sc.nextLine();
-      String answer = userInput;
+      String answer = userInput; // User input
       transcript.add(answer);
       transcriptNum += 1;
 
@@ -39,7 +39,7 @@ class Conversation {
       userInput.contains("I'm")||
       userInput.contains("?")||
       userInput.contains(".")||
-      userInput.contains("You")){
+      userInput.contains("You")){ // Checks for mirror words
         if (userInput.contains("I")){
           System.out.println(userInput);
           if (userInput.contains(" I ")){
@@ -57,6 +57,11 @@ class Conversation {
         if (userInput.contains("am")){
           answer = userInput.replaceAll("am", "are");
           }
+        
+        if (userInput.contains("are")){
+          answer = userInput.replaceAll("are", "am");
+          }
+        
         if (userInput.contains("you")){
           answer = userInput.replaceAll("you", "I");
           }
@@ -86,7 +91,7 @@ class Conversation {
           }
         
         }
-      else{
+      else{ // Canned responses
         Random r = new Random();
         int randI = r.nextInt(randomResponses.length);
         answer = randomResponses[randI];
@@ -103,7 +108,7 @@ class Conversation {
 
     sc.close();
     
-    for (int i=0; i < transcriptNum; i++){
+    for (int i=0; i < transcriptNum; i++){ // Loop to print out transcript in lines
       System.out.println(transcript.get(i));
   }}
 }
