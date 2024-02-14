@@ -7,6 +7,8 @@ class Conversation {
   public static void main(String[] arguments) {
     // You will start the conversation here.
     List<String> transcript = new ArrayList<>();
+    
+    int transcriptNum = 0;
     transcript.add("Transcript");
     
     Scanner sc = new Scanner(System.in);
@@ -14,7 +16,8 @@ class Conversation {
     int userRoundInput = sc.nextInt();
     System.out.println("Hi, what's up?");
     transcript.add("Hi, what's up?");
-    
+    transcriptNum += 1;
+
     String userInput = sc.nextLine();
 
     
@@ -24,6 +27,7 @@ class Conversation {
       userInput = sc.nextLine();
       String answer = userInput;
       transcript.add(answer);
+      transcriptNum += 1;
 
       if (userInput.contains("I")|| 
       userInput.contains("me")||
@@ -94,18 +98,20 @@ class Conversation {
         Random r = new Random();
         int randI = r.nextInt(randomResponses.length);
         answer = randomResponses[randI];
-        transcript.add(answer);
+
       }
       System.out.println(answer);
       transcript.add(answer);
+      transcriptNum += 1;
       
     }  
     System.out.println("Bye! Have a nice day!");
-    transcript.add("Bye! Have a nice day!"); 
+    transcript.add("Bye! Have a nice day!");
+    transcriptNum += 1; 
 
     sc.close();
     
-    for (int i=0; i < userRoundInput; i++){
+    for (int i=0; i < transcriptNum; i++){
       System.out.println(transcript.get(i));
   }}
 }
