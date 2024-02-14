@@ -1,23 +1,29 @@
 import java.util.*;
 class Conversation {
 
-  public static String[] transcript;
+  // public static String[] transcript;
   public static String[] randomResponses = {"Is that so...","Interesting observation...", "I see...", "Mhm..."};
 
   public static void main(String[] arguments) {
     // You will start the conversation here.
-
+    List<String> transcript = new ArrayList<>();
+    transcript.add("Transcript");
+    
     Scanner sc = new Scanner(System.in);
     System.out.println("How many rounds? (in numbers)"); // Take input of how many rounds
     int userRoundInput = sc.nextInt();
     System.out.println("Hi, what's up?");
+    transcript.add("Hi, what's up?");
     
     String userInput = sc.nextLine();
+
+    
+    
 
     for (int i=0; i < userRoundInput; i++){
       userInput = sc.nextLine();
       String answer = userInput;
-      // transcript.add(answer);
+      transcript.add(answer);
 
       if (userInput.contains("I")|| 
       userInput.contains("me")||
@@ -88,12 +94,18 @@ class Conversation {
         Random r = new Random();
         int randI = r.nextInt(randomResponses.length);
         answer = randomResponses[randI];
+        transcript.add(answer);
       }
       System.out.println(answer);
+      transcript.add(answer);
       
     }  
-    System.out.println("Bye! Have a nice day!"); 
+    System.out.println("Bye! Have a nice day!");
+    transcript.add("Bye! Have a nice day!"); 
 
     sc.close();
-  }
+    
+    for (int i=0; i < userRoundInput; i++){
+      System.out.println(transcript.get(i));
+  }}
 }
