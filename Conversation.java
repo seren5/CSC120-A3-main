@@ -2,7 +2,7 @@ import java.util.*;
 class Conversation {
 
   public static String[] transcript;
-  public static String[] randomResponses = {"e","e"};
+  public static String[] randomResponses = {"Is that so...","Interesting observation"};
 
   public static void main(String[] arguments) {
     // You will start the conversation here.
@@ -14,8 +14,43 @@ class Conversation {
     
     for (int i=0; i < userRoundInput; i++){
       String userInput = sc.nextLine();
-      if (userInput.contains("?")):
-        
+      
+      if (userInput.contains("I")){
+        if (userInput.contains(" I ")){
+          userInput.replace(" I ", "you");
+          //userInput.replace(".", "?");
+        }
+        else{
+          userInput.replace("I ", "You");
+        }
+      
+      if (userInput.contains("me")){
+        userInput.replace("me", "you");
+      }
+
+      if (userInput.contains("am")){
+        userInput.replace("am", "are");
+      }
+      if (userInput.contains("you")){
+        userInput.replace("you", "I");
+      }
+      
+      if (userInput.contains("my")){
+        userInput.replace("my", "your");
+      }
+      
+      if (userInput.contains("I'm")){
+        if (userInput.contains(" I'm ")){
+          userInput.replace("I'm", "you're");
+          //userInput.replace(".", "?");
+        }
+        else{
+          userInput.replace("I'm", "You're");
+        }
+
+          System.out.println(userInput);
+      }
+    System.out.println("Bye! Have a nice day!");  
 
     } // Loop for number of rounds
       // Greeting line (maybe variation)
@@ -28,4 +63,4 @@ class Conversation {
         
 
   }
-}
+}}
