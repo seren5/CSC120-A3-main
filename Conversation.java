@@ -37,8 +37,8 @@ class Conversation {
       userInput.contains("am")||
       userInput.contains("my")||
       userInput.contains("I'm")||
-      userInput.contains("?")||
-      userInput.contains(".")||
+      // userInput.contains("?")||
+      // userInput.contains(".")||
       userInput.contains("You")){ // Checks for mirror words
         if (userInput.contains("I")){
           System.out.println(userInput);
@@ -82,13 +82,13 @@ class Conversation {
             answer = userInput.replaceAll("I'm", "You're");
             }}
           
-        if (userInput.contains("?")){
-          answer = userInput.replaceAll("?", ".");
-          }
+        // if (userInput.contains("?")){
+        //   answer = userInput.replaceAll("?", ".");
+        //   }
 
-        if (userInput.contains(".")){
-          answer = userInput.replaceAll(".", "?");
-          }
+        // if (userInput.contains(".")){
+        //   answer = userInput.replaceAll(".", "?");
+        //   }
         
         }
       else{ // Canned responses
@@ -110,5 +110,6 @@ class Conversation {
     
     for (int i=0; i < transcriptNum; i++){ // Loop to print out transcript in lines
       System.out.println(transcript.get(i));
-  }}
+      }
+}
 }

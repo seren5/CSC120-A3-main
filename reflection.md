@@ -13,4 +13,4 @@ My initial impressions of Java are that it's a lot more finnicky than Python is,
 In general, I'd say that programming requires a plan before you start, as well as some knowledge of the steps one will take to complete the program before you even get started.
 
 - What worked, what didn't, what advice would you give someone taking this course in the future?
-The brackets did not work for me, and caused me a lot of confusion. For someone taking this course in the future, I'd give them a heads up to make sure they're remembering to check where each bracket is opened and closes so that they aren't confused for a long time like I was.
+The brackets did not work for me, and caused me a lot of confusion. For someone taking this course in the future, I'd give them a heads up to make sure they're remembering to check where each bracket is opened and closes so that they aren't confused for a long time like I was. Moreover, it had issues with mirroring multiple words.
