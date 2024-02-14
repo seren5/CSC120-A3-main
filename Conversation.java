@@ -72,7 +72,6 @@ class Conversation {
         if (userInput.contains("I'm")){
           if (userInput.contains(" I'm ")){
             answer = userInput.replaceAll("I'm", "you're");
-              //userInput.replace(".", "?");
             }
           else{
             answer = userInput.replaceAll("I'm", "You're");
@@ -86,13 +85,6 @@ class Conversation {
           answer = userInput.replaceAll(".", "?");
           }
         
-        // if (userInput.contains("temp")){
-        //   answer = userInput.replaceAll("temp", "you");
-        // }
-
-        // if (userInput.contains("tempCapital")){
-        //   answer = userInput.replaceAll("tempCapital", "You");
-        // }
         }
       else{
         Random r = new Random();
