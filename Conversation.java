@@ -9,7 +9,7 @@ class Conversation {
     List<String> transcript = new ArrayList<>();
     
     int transcriptNum = 0;
-    transcript.add("Transcript");
+    transcript.add("\nTranscript\n==========");
     
     Scanner sc = new Scanner(System.in);
     System.out.println("How many rounds? (in numbers)"); // Take input of how many rounds
