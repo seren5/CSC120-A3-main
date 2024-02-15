@@ -64,6 +64,6 @@ _____ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
       __**YES**___ Methods avoid confusing side effects
 
-_____ 1 pt: All required files included with submission (including completed checklist file)
+__**YES**___ 1 pt: All required files included with submission (including completed checklist file)
 
 __**YES**___ 1 pt: `reflection.md` contains your reflection on the assignment

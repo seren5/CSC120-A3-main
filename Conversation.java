@@ -41,15 +41,15 @@ class Conversation {
       // userInput.contains(".")||
       userInput.contains("You")){ // Checks for mirror words
         if (userInput.contains("I")){
-          System.out.println(userInput);
+            System.out.println(userInput);
           if (userInput.contains(" I ")){
             answer = userInput.replaceAll(" I ", "you");
             }
           else{
             answer = userInput.replaceAll("I", "You");
             }
-          
-          }
+            
+            }
         if (userInput.contains("me")){
           answer = userInput.replaceAll("me", "you");
           }
@@ -57,23 +57,23 @@ class Conversation {
         if (userInput.contains("am")){
           answer = userInput.replaceAll("am", "are");
           }
-        
+          
         if (userInput.contains("are")){
           answer = userInput.replaceAll("are", "am");
           }
-        
+          
         if (userInput.contains("you")){
           answer = userInput.replaceAll("you", "I");
           }
-        
+          
         if (userInput.contains("You")){
           answer = userInput.replaceAll("You", "I");
-        }
-          
+          }
+            
         if (userInput.contains("my")){
           answer = userInput.replaceAll("my", "your");
           }
-          
+            
         if (userInput.contains("I'm")){
           if (userInput.contains(" I'm ")){
             answer = userInput.replaceAll("I'm", "you're");
