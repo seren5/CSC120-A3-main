@@ -60,32 +60,27 @@ class Conversation {
             
             }
         if (userInput.contains("me")){
-          if (userInput.contains(" me ")){
-            answer = userInput.replaceAll("me", "you");
-            }
-          else{
-            answer = userInput.replaceAll("me", "you");
-            }
+          answer = userInput.replaceAll("\\bme\\b", "you");
           }
 
         if (userInput.contains("am")){
-          answer = userInput.replaceAll("am", "are");
+          answer = userInput.replaceAll("\\bam\\b", "are");
           }
           
         if (userInput.contains("are")){
-          answer = userInput.replaceAll("are", "am");
+          answer = userInput.replaceAll("\\bare\b", "am");
           }
           
         if (userInput.contains("you")){
-          answer = userInput.replaceAll("you", "I");
+          answer = userInput.replaceAll("\\byou\b", "I");
           }
           
         if (userInput.contains("You")){
-          answer = userInput.replaceAll("You", "I");
+          answer = userInput.replaceAll("\\bYou\b", "I");
           }
             
         if (userInput.contains("my")){
-          answer = userInput.replaceAll("my", "your");
+          answer = userInput.replaceAll("\\bmy\b", "your");
           }
             
         if (userInput.contains("I'm")){
