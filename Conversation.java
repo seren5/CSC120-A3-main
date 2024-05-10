@@ -1,18 +1,28 @@
 import java.util.*;
 class Conversation {
 
-  // public static String[] transcript;
+
+  /**
+   * public static String[] transcript
+   */
   public static String[] randomResponses = {"Is that so...","Interesting observation...", "I see...", "Mhm..."};
 
+  /**
+   * 
+   * @param arguments
+   */
   public static void main(String[] arguments) {
     // You will start the conversation here.
     List<String> transcript = new ArrayList<>();
     
-    int transcriptNum = 0; // Starts recording number of lines in transcript
-    transcript.add("\nTranscript\n=========="); // Starts transcript
+    // Starts recording number of lines in transcript
+    int transcriptNum = 0;
+    // Starts transcript
+    transcript.add("\nTranscript\n==========");
     
+    // Takes user input of how many rounds
     Scanner sc = new Scanner(System.in);
-    System.out.println("How many rounds? (in numbers)"); // Take input of how many rounds
+    System.out.println("How many rounds? (in numbers)");
     int userRoundInput = sc.nextInt();
     System.out.println("Hi, what's up?");
     transcript.add("Hi, what's up?");
@@ -22,13 +32,14 @@ class Conversation {
 
     
     
-
-    for (int i=0; i < userRoundInput; i++){ // Loop
+    // Loop to take user input
+    for (int i=0; i < userRoundInput; i++){
       userInput = sc.nextLine();
       String answer = userInput; // User input
       transcript.add(answer);
       transcriptNum += 1;
 
+      // Checks user input for mirror words
       if (userInput.contains("I")|| 
       userInput.contains("me")||
       userInput.contains("am")||
@@ -37,9 +48,7 @@ class Conversation {
       userInput.contains("am")||
       userInput.contains("my")||
       userInput.contains("I'm")||
-      // userInput.contains("?")||
-      // userInput.contains(".")||
-      userInput.contains("You")){ // Checks for mirror words
+      userInput.contains("You")){ 
         if (userInput.contains("I")){
             System.out.println(userInput);
           if (userInput.contains(" I ")){
@@ -51,7 +60,12 @@ class Conversation {
             
             }
         if (userInput.contains("me")){
-          answer = userInput.replaceAll("me", "you");
+          if (userInput.contains(" me ")){
+            answer = userInput.replaceAll("me", "you");
+            }
+          else{
+            answer = userInput.replaceAll("me", "you");
+            }
           }
 
         if (userInput.contains("am")){
@@ -80,18 +94,12 @@ class Conversation {
             }
           else{
             answer = userInput.replaceAll("I'm", "You're");
-            }}
-          
-        // if (userInput.contains("?")){
-        //   answer = userInput.replaceAll("?", ".");
-        //   }
-
-        // if (userInput.contains(".")){
-        //   answer = userInput.replaceAll(".", "?");
-        //   }
-        
+            }
+          }
         }
-      else{ // Canned responses
+      
+      // Replies in canned responses if not
+      else{
         Random r = new Random();
         int randI = r.nextInt(randomResponses.length);
         answer = randomResponses[randI];
@@ -108,7 +116,8 @@ class Conversation {
 
     sc.close();
     
-    for (int i=0; i < transcriptNum; i++){ // Loop to print out transcript in lines
+    // Loop to print out transcript in lines
+    for (int i=0; i < transcriptNum; i++){
       System.out.println(transcript.get(i));
       }
 }
